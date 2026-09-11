@@ -275,6 +275,7 @@
     <button class="tier" data-view="type">Type</button>
     <button class="tier" data-view="components">Components</button>
     <button class="tier" data-view="motion">Motion</button>
+    <button class="tier" data-view="nav">Nav</button>
     <button class="tier" data-view="rules">Rules</button>
   </nav>
 </div>
@@ -476,6 +477,49 @@
 </section>
 
 <!-- ================= RULES ================= -->
+<section class="view" data-view="nav">
+  <style>
+    .navdemo{ background:var(--charcoal); border-radius:8px; padding:24px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; margin-top:8px; overflow:hidden; }
+    .navdemo .wm{ font-family:var(--font-display); font-weight:900; font-size:19px; letter-spacing:-.02em; text-transform:uppercase; color:var(--cream); }
+    .navdemo .links{ display:flex; gap:26px; align-items:center; }
+    .ds-navlink{ display:inline-flex; font-family:var(--font-display); font-weight:800; font-size:15px; letter-spacing:.11em; text-transform:uppercase; color:var(--cream); text-decoration:none; cursor:pointer; }
+    .ds-navlink .ch{ position:relative; display:inline-block; line-height:1; }
+    .ds-navlink .ch .t, .ds-navlink .ch .b{ display:block; }
+    .ds-navlink .ch .b{ position:absolute; left:0; top:0; color:var(--cherish); clip-path:polygon(0% 0%,100% 0%,100% -12%,66% 0%,33% -12%,0% 0%); transition:clip-path .55s ease; transition-delay:calc(var(--i)*22ms); }
+    .ds-navlink:hover .ch .b{ clip-path:polygon(0% 0%,100% 0%,100% 100%,66% 112%,33% 100%,0% 112%); }
+    .ds-navlink .sp{ display:inline-block; width:.3em; }
+    @media (max-width:700px){ .navdemo .links{ display:none; } }
+  </style>
+  <div class="pad">
+    <span class="eyebrow">Navigation</span>
+    <h1 class="vh">The floating nav.</h1>
+    <p class="vlede">Not a bar. Two objects float over the hero and recolor to whatever's behind them. The signature is the hover — ink pouring into each letter.</p>
+
+    <p class="glabel">Hover the links — the ink pour</p>
+    <div class="navdemo">
+      <span class="wm">Ariba Jahan</span>
+      <div class="links">
+        <a class="ds-navlink">Speaking</a>
+        <a class="ds-navlink">Work With Me</a>
+        <a class="ds-navlink">Unmissables</a>
+        <a class="ds-navlink">About</a>
+        <a class="ds-navlink">Contact</a>
+      </div>
+    </div>
+
+    <p class="glabel">How it behaves</p>
+    <div class="rules">
+      <div class="rule"><span class="n">1</span><p><strong>Floating, not a bar.</strong> Wordmark left, links right, nothing spanning the width — the hero owns the full top edge.</p></div>
+      <div class="rule"><span class="n">2</span><p><strong>Recolors to the ground.</strong> White over dark heroes and sections, charcoal over cream. It reads the background behind it as you scroll.</p></div>
+      <div class="rule"><span class="n">3</span><p><strong>Hides on scroll down, returns on scroll up or pause.</strong> It clears out of the way while reading, then comes back the moment you reach for it.</p></div>
+      <div class="rule"><span class="n">4</span><p><strong>A whisper of background, only past the hero.</strong> Bare over the hero; a faint panel appears behind the links once it floats over content.</p></div>
+      <div class="rule" style="background:var(--cherish)"><span class="n">5</span><p><strong>Ink-pour hover.</strong> Each link fills with cherish from the top down, staggered letter by letter, with a rippled liquid edge. One organic moment in a sharp system.</p></div>
+      <div class="rule"><span class="n">6</span><p><strong>Mobile is a full-screen menu.</strong> Wordmark and a burger; tapping opens a charcoal panel with the links stacked large.</p></div>
+    </div>
+    <p class="vlede" style="font-size:14px;margin-top:26px;opacity:0.6">Live on <a href="https://aribajahan.com" style="color:var(--cherish)">aribajahan.com</a>. The ink pour is an animated <code style="font-family:var(--font-body)">clip-path</code> — no library.</p>
+  </div>
+</section>
+
 <section class="view" data-view="rules">
   <div class="pad">
     <span class="eyebrow">The working rules</span>
@@ -533,6 +577,20 @@
     views.forEach(x => x.classList.toggle('active', x.dataset.view === v));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }));
+
+  // ---- Nav view: split the demo links into letters for the ink-pour hover ----
+  document.querySelectorAll('.ds-navlink').forEach((a) => {
+    const text = a.textContent;
+    a.textContent = '';
+    let i = 0;
+    for (const chr of text) {
+      if (chr === ' ') { const s = document.createElement('span'); s.className = 'sp'; a.appendChild(s); continue; }
+      const ch = document.createElement('span'); ch.className = 'ch'; ch.style.setProperty('--i', i++);
+      const t = document.createElement('span'); t.className = 't'; t.textContent = chr;
+      const b = document.createElement('span'); b.className = 'b'; b.textContent = chr;
+      ch.appendChild(t); ch.appendChild(b); a.appendChild(ch);
+    }
+  });
 
   // ---- Canvas controls ----
   const canvas = document.getElementById('canvas');
