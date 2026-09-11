@@ -9,7 +9,7 @@ every color, type size, and component on the page is also holding the page up.
 
 ## What's in it
 
-A browsable app, not a scroll. Six views, switched from the top nav:
+A browsable app with six views, switched from the top nav:
 
 - **Canvas** — a live preview you drive. Flip **Ground** (cream / charcoal / red),
   **Density** (compact / default / open), **Viewport** (desktop / mobile), and **Motion**
@@ -29,9 +29,9 @@ Three structural colors — cream `#FFFBF3`, charcoal `#2D2D2D`, cherish red `#E
 carry the whole site, rotating as section grounds so no more than two same-tone sections
 sit in a row. Four accents (tennis green, femme pink, tangerine, highlighter) appear only
 where each is reserved. Headlines, numerals, and labels are set in Big Shoulders Display at
-heavy weights; Barlow does all the reading, with a 16px floor. Motion confirms rather than
-announces — continuous ambient loops and the feedback of touch, never content parked
-offscreen waiting to reveal itself.
+heavy weights; Barlow does all the reading, with a 16px floor. Motion lives in continuous
+ambient loops and the feedback of touch. Nothing is parked offscreen waiting to reveal
+itself.
 
 ## Stack
 
