@@ -54,7 +54,7 @@
   .tier {
     border: none; background: transparent; color: var(--charcoal);
     font-family: var(--font-display); font-weight: 800; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 9px 16px; border-radius: 40px; white-space: nowrap; transition: background .15s, color .15s; opacity: 0.55;
+    padding: 9px 16px; border-radius: 3px; white-space: nowrap; transition: background .15s, color .15s; opacity: 0.55;
   }
   .tier:hover { opacity: 1; }
   .tier.active { background: var(--charcoal); color: var(--ink-on-dark); opacity: 1; }
@@ -75,11 +75,11 @@
   .controls { display: flex; flex-wrap: wrap; gap: 22px; padding: 16px 18px; background: var(--panel); border: 1px solid var(--hairline); border-radius: 8px; margin-bottom: 22px; }
   .ctrl { display: flex; flex-direction: column; gap: 8px; }
   .ctrl .clab { font-family: var(--font-display); font-weight: 800; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.5; }
-  .seg { display: inline-flex; background: rgba(45,45,45,0.06); border-radius: 7px; padding: 3px; gap: 2px; }
+  .seg { display: inline-flex; background: rgba(45,45,45,0.06); border-radius: 5px; padding: 3px; gap: 2px; }
   .seg button {
     border: none; background: transparent; color: var(--charcoal);
     font-family: var(--font-display); font-weight: 800; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
-    padding: 7px 13px; border-radius: 5px; transition: background .15s, color .15s, box-shadow .15s; opacity: 0.6; display: flex; align-items: center; gap: 6px;
+    padding: 7px 13px; border-radius: 3px; transition: background .15s, color .15s, box-shadow .15s; opacity: 0.6; display: flex; align-items: center; gap: 6px;
   }
   .seg button:hover { opacity: 1; }
   .seg button.on { background: var(--cream); color: var(--charcoal); opacity: 1; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
@@ -126,7 +126,7 @@
 
   /* ============ COLOR VIEW ============ */
   .subtabs { display: inline-flex; gap: 3px; background: rgba(45,45,45,0.06); border-radius: 8px; padding: 4px; margin-bottom: 30px; flex-wrap: wrap; }
-  .subtab { border: none; background: transparent; color: var(--charcoal); font-family: var(--font-display); font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 18px; border-radius: 5px; opacity: 0.55; }
+  .subtab { border: none; background: transparent; color: var(--charcoal); font-family: var(--font-display); font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 18px; border-radius: 3px; opacity: 0.55; }
   .subtab:hover { opacity: 1; }
   .subtab.on { background: var(--cream); color: var(--charcoal); opacity: 1; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
   .subview { display: none; }
@@ -179,8 +179,8 @@
   .icon-btn:hover, .icon-btn.f-hover { transform: translateY(-6px); border-color: var(--cherish); color: var(--cherish); }
   .icon-btn:active, .icon-btn.f-active { transform: scale(0.92); }
 
-  .state-toggle { display: inline-flex; gap: 2px; background: rgba(45,45,45,0.06); border-radius: 7px; padding: 3px; margin-bottom: 22px; }
-  .state-toggle button { border: none; background: transparent; font-family: var(--font-display); font-weight: 800; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 14px; border-radius: 5px; opacity: 0.6; color: var(--charcoal); }
+  .state-toggle { display: inline-flex; gap: 2px; background: rgba(45,45,45,0.06); border-radius: 5px; padding: 3px; margin-bottom: 22px; }
+  .state-toggle button { border: none; background: transparent; font-family: var(--font-display); font-weight: 800; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 14px; border-radius: 3px; opacity: 0.6; color: var(--charcoal); }
   .state-toggle button.on { background: var(--cream); opacity: 1; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
 
   .tapepill { display: inline-block; transform: rotate(-1.4deg); padding: 3px 10px; font-family: var(--font-display); font-weight: 800; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--charcoal); }
@@ -215,7 +215,7 @@
   .mo .bar { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-top: 1px solid var(--hairline); background: var(--cream); gap: 12px; }
   .mo .bar .t { font-family: var(--font-display); font-weight: 800; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
   .mo .bar .meta { font-size: 11.5px; opacity: 0.6; font-variant-numeric: tabular-nums; }
-  .replay { border: 1.5px solid var(--cherish); color: var(--cherish); background: transparent; border-radius: 40px; font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px; white-space: nowrap; transition: background .15s, color .15s; }
+  .replay { border: 1.5px solid var(--cherish); color: var(--cherish); background: transparent; border-radius: 3px; font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px; white-space: nowrap; transition: background .15s, color .15s; }
   .replay:hover { background: var(--cherish); color: var(--ink-on-dark); }
 
   .marquee { overflow: hidden; width: 100%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
@@ -247,7 +247,7 @@
   .foot .footlinks a { font-family: var(--font-display); font-weight: 800; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; transition: opacity .15s, color .15s; }
   .foot .footlinks a:hover { opacity: 1; color: var(--cherish); }
 
-  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--charcoal); color: var(--ink-on-dark); font-family: var(--font-display); font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 22px; border-radius: 40px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 100; }
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--charcoal); color: var(--ink-on-dark); font-family: var(--font-display); font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 22px; border-radius: 3px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 100; }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   @media (max-width: 720px) {
