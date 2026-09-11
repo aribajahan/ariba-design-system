@@ -43,9 +43,7 @@
     padding: 16px clamp(18px, 4vw, 40px) 0;
   }
   .brand { display: flex; align-items: center; gap: 12px; }
-  .brand .balloon { width: 34px; height: 40px; position: relative; flex: 0 0 auto; }
-  .brand .balloon .b { width: 30px; height: 34px; border-radius: 50% 50% 48% 48%; background: var(--cherish); }
-  .brand .balloon .s { position: absolute; left: 15px; top: 33px; width: 1.5px; height: 7px; background: var(--charcoal); }
+  .brand .ajmark { width: 40px; height: 40px; flex: 0 0 auto; background: var(--cherish); color: var(--cream); font-family: var(--font-display); font-weight: 900; font-size: 19px; letter-spacing: -0.02em; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
   .brand .txt .n { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: -0.01em; text-transform: uppercase; line-height: 0.9; }
   .brand .txt .m { font-family: var(--font-display); font-weight: 700; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.55; }
   .help { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--hairline); background: transparent; font-weight: 800; color: var(--charcoal); font-family: var(--font-display); }
@@ -244,7 +242,10 @@
 
   .foot { border-top: 1px solid var(--hairline); padding: 30px clamp(18px, 4vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: baseline; }
   .foot .w { font-family: var(--font-display); font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: -0.01em; }
-  .foot .note { font-size: 12.5px; opacity: 0.6; max-width: 44ch; }
+  .foot .note { font-size: 12.5px; opacity: 0.6; max-width: 44ch; margin-top: 6px; }
+  .foot .footlinks { display: flex; gap: 22px; align-items: baseline; }
+  .foot .footlinks a { font-family: var(--font-display); font-weight: 800; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; transition: opacity .15s, color .15s; }
+  .foot .footlinks a:hover { opacity: 1; color: var(--cherish); }
 
   .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--charcoal); color: var(--ink-on-dark); font-family: var(--font-display); font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 22px; border-radius: 40px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 100; }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
@@ -508,8 +509,14 @@
 </section>
 
 <footer class="foot">
-  <div><div class="w">Ariba Jahan</div></div>
-  <div class="note">The design system behind aribajahan.com. Cream, charcoal, cherish red — Big Shoulders Display &amp; Barlow. Built in the system it documents.</div>
+  <div>
+    <div class="w">Ariba Jahan</div>
+    <div class="note">© 2026 Ariba Jahan. The design system behind aribajahan.com, built in the system it documents.</div>
+  </div>
+  <div class="footlinks">
+    <a href="https://aribajahan.com">aribajahan.com ↗</a>
+    <a href="/legal">Legal &amp; provenance</a>
+  </div>
 </footer>
 
 <div class="toast" id="toast">Copied</div>

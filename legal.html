@@ -1,0 +1,111 @@
+<title>Legal &amp; Provenance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root {
+    --cream: #FFFBF3; --charcoal: #2D2D2D; --cherish: #E73131; --tennis: #8EF942;
+    --ink-on-dark: #FFFBF3; --hairline: rgba(45,45,45,0.14);
+    --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+    --font-body: 'Barlow', system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--cream); color: var(--charcoal); font-family: var(--font-body); -webkit-font-smoothing: antialiased; line-height: 1.65; }
+  a { color: inherit; }
+
+  .chrome { border-bottom: 1px solid var(--hairline); }
+  .chrome-in { max-width: 900px; margin: 0 auto; padding: 18px clamp(20px, 5vw, 44px); display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .ajmark { width: 40px; height: 40px; flex: 0 0 auto; background: var(--cherish); color: var(--cream); font-family: var(--font-display); font-weight: 900; font-size: 19px; letter-spacing: -0.02em; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .brand .n { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: -0.01em; text-transform: uppercase; line-height: 0.9; }
+  .brand .m { font-family: var(--font-display); font-weight: 700; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.55; }
+  .back { font-family: var(--font-display); font-weight: 800; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; text-decoration: none; }
+  .back:hover { opacity: 1; color: var(--cherish); }
+
+  .wrap { max-width: 780px; margin: 0 auto; padding: 64px clamp(20px, 5vw, 44px) 100px; }
+  .eyebrow { font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cherish); }
+  h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(40px, 8vw, 68px); line-height: 0.9; letter-spacing: -0.025em; text-transform: uppercase; margin: 14px 0 0; }
+  .lede { font-size: 18px; line-height: 1.55; max-width: 60ch; margin: 20px 0 0; opacity: 0.85; }
+  .updated { font-size: 13px; opacity: 0.5; margin-top: 14px; font-variant-numeric: tabular-nums; }
+
+  section.item { border-top: 1px solid var(--hairline); padding: 34px 0; display: grid; grid-template-columns: 100px 1fr; gap: 26px; }
+  section.item:last-of-type { border-bottom: 1px solid var(--hairline); }
+  .num { font-family: var(--font-display); font-weight: 900; font-size: 34px; line-height: 1; color: var(--cherish); opacity: 0.55; font-variant-numeric: tabular-nums; }
+  .item h2 { font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -0.005em; text-transform: uppercase; margin: 0 0 12px; }
+  .item p { margin: 0 0 14px; font-size: 16px; max-width: 62ch; }
+  .item p:last-child { margin-bottom: 0; }
+  .item a { color: var(--cherish); text-decoration: none; }
+  .item a:hover { text-decoration: underline; }
+
+  .foot { border-top: 1px solid var(--hairline); }
+  .foot-in { max-width: 780px; margin: 0 auto; padding: 26px clamp(20px, 5vw, 44px); display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: baseline; }
+  .foot .note { font-size: 12.5px; opacity: 0.55; }
+  .foot .links { display: flex; gap: 20px; }
+  .foot .links a { font-family: var(--font-display); font-weight: 800; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; text-decoration: none; }
+  .foot .links a:hover { opacity: 1; color: var(--cherish); }
+
+  @media (max-width: 620px) { section.item { grid-template-columns: 1fr; gap: 8px; } .num { font-size: 26px; } }
+</style>
+
+<header class="chrome">
+  <div class="chrome-in">
+    <a href="/" class="brand" style="text-decoration:none">
+      <div class="ajmark">AJ</div>
+      <div><div class="n">Ariba Jahan</div><div class="m">Design System · v2026</div></div>
+    </a>
+    <a href="/" class="back">← Back to the system</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <span class="eyebrow">Governance</span>
+  <h1>Legal &amp;<br>provenance</h1>
+  <p class="lede">Who owns what's here, how it was made, and what it borrows from. This design system is an independent project by Ariba Jahan. It documents the visual language of <a href="https://aribajahan.com" style="color:var(--cherish);text-decoration:none">aribajahan.com</a>.</p>
+  <div class="updated">Last updated September 2026</div>
+
+  <section class="item">
+    <div class="num">01</div>
+    <div>
+      <h2>Ownership</h2>
+      <p>Ariba Jahan holds copyright in the original content created for this design system — the writing, documentation, code, visual arrangements, and brand assets. Third-party trademarks and licensed materials are excluded from that claim and remain with their owners.</p>
+      <p>You're welcome to read the system, learn from it, and take ideas from how it's put together. Please don't copy the brand assets or present the work as your own.</p>
+    </div>
+  </section>
+
+  <section class="item">
+    <div class="num">02</div>
+    <div>
+      <h2>Process</h2>
+      <p>This site and the system it documents were built with AI tools, as part of Ariba's practice of building in the open. She directs the work, chooses among the options, and revises the results; nothing ships without her review.</p>
+      <p>Copyright protection may not extend to material generated solely by an AI tool. Every part of this site was reviewed and shaped by a person before it went live.</p>
+    </div>
+  </section>
+
+  <section class="item">
+    <div class="num">03</div>
+    <div>
+      <h2>Typography</h2>
+      <p>The system is set in two open-source typefaces served through Google Fonts: <strong>Big Shoulders Display</strong> for headlines, numerals, and labels, and <strong>Barlow</strong> for reading. Both are licensed under the SIL Open Font License.</p>
+    </div>
+  </section>
+
+  <section class="item">
+    <div class="num">04</div>
+    <div>
+      <h2>References</h2>
+      <p>The format of this site — a design system presented as something you can browse and drive rather than a static reference — was inspired by <a href="https://balloon.matthewlinn.design">Balloon</a>, an independent design system by Matthew Linn. The visual language, palette, and every component are Ariba's own.</p>
+      <p>This project isn't affiliated with, sponsored by, or endorsed by Balloon or Matthew Linn. It's named here as a reference and a thank-you.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="note">© 2026 Ariba Jahan. All rights reserved.</div>
+    <div class="links">
+      <a href="https://aribajahan.com">aribajahan.com ↗</a>
+      <a href="/">The system</a>
+    </div>
+  </div>
+</footer>
