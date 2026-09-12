@@ -1,0 +1,112 @@
+<title>Minimal Nav Hovers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500&display=swap">
+<style>
+  :root{
+    --cream:#FFFBF3; --charcoal:#2D2D2D; --cherish:#E73131; --pink:#F5A8D5;
+    --fd:'Big Shoulders Display','Arial Narrow',sans-serif; --fb:'Barlow',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--charcoal); color:var(--cream); font-family:var(--fb); -webkit-font-smoothing:antialiased; padding:56px clamp(24px,6vw,80px) 100px;}
+  .head{max-width:1100px; margin:0 auto;}
+  .eyebrow{font-family:var(--fd); font-weight:800; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--cherish);}
+  h1{font-family:var(--fd); font-weight:900; font-size:clamp(34px,6vw,56px); line-height:.92; letter-spacing:-.02em; text-transform:uppercase; margin:12px 0 0;}
+  .sub{font-size:17px; opacity:.72; max-width:60ch; margin:16px 0 0; line-height:1.5;}
+
+  .rows{max-width:1100px; margin:44px auto 0; display:flex; flex-direction:column; gap:2px;}
+  .row{padding:40px 4px; border-top:1px solid rgba(255,251,243,.12); display:flex; flex-direction:column; gap:24px;}
+  .row:last-child{border-bottom:1px solid rgba(255,251,243,.12);}
+  .rowlab{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;}
+  .rowlab .n{font-family:var(--fd); font-weight:900; font-size:22px; text-transform:uppercase; letter-spacing:-.01em;}
+  .rowlab .d{font-size:14px; opacity:.6; max-width:64ch;}
+  .links{display:flex; align-items:center; gap:36px; flex-wrap:wrap;}
+  .links a{font-family:var(--fd); font-weight:800; font-size:20px; letter-spacing:.11em; text-transform:uppercase; color:var(--cream); text-decoration:none; cursor:pointer;}
+
+  .letters a{display:inline-flex; color:var(--cream);}
+  .letters .ch{position:relative; display:inline-block; line-height:1;}
+  .letters .ch .t, .letters .ch .b{display:block;}
+  .letters .ch .b{position:absolute; left:0; top:0; color:var(--cherish);}
+  .letters .sp{display:inline-block; width:.30em;}
+
+  /* A — HORIZONTAL SWAP: letters slide left, red arrives from the right (the roll you love, sideways) */
+  .hs .ch{overflow:hidden;}
+  .hs .ch .t, .hs .ch .b{transition:transform .42s cubic-bezier(.62,0,.2,1); transition-delay:calc(var(--i) * 20ms);}
+  .hs .ch .b{left:100%;}
+  .hs a:hover .ch .t, .hs a:hover .ch .b{transform:translateX(-100%);}
+
+  /* B — INK POUR: each letter fills with red from the top down, staggered (no movement) */
+  .cw .ch .b{clip-path:inset(0 0 100% 0); transition:clip-path .34s ease; transition-delay:calc(var(--i) * 22ms);}
+  .cw a:hover .ch .b{clip-path:inset(0 0 0 0);}
+
+  /* C — HOP: letters lift and turn red in a little wave */
+  .jp .ch .b{display:none;}
+  .jp .ch .t{transition:transform .32s cubic-bezier(.34,1.56,.5,1), color .2s ease; transition-delay:calc(var(--i) * 30ms);}
+  .jp a:hover .ch .t{transform:translateY(-6px); color:var(--cherish);}
+
+  /* D — SOFT MORPH: letters blur through and resolve to red, staggered */
+  .bl .ch .b{display:none;}
+  .bl .ch .t{transition:color .34s ease; transition-delay:calc(var(--i) * 24ms);}
+  @keyframes bmorph{0%{filter:blur(0)} 45%{filter:blur(3px)} 100%{filter:blur(0)}}
+  .bl a:hover .ch .t{color:var(--cherish); animation:bmorph .45s ease; animation-delay:calc(var(--i) * 24ms);}
+
+  .foot{max-width:1100px; margin:40px auto 0; font-size:13px; opacity:.5; line-height:1.5;}
+</style>
+
+<div class="head">
+  <span class="eyebrow">Nav Hover Lab · Minimal, not the roll</span>
+  <h1>Same restraint, different move.</h1>
+  <p class="sub">Four minimal hovers that aren't Kettle's vertical roll. Each still turns the link cherish, but with its own character. Hover them.</p>
+</div>
+
+<div class="rows">
+  <div class="row hs">
+    <div class="rowlab"><span class="n">A · Sideways swap</span><span class="d">The swap you love, but horizontal: letters slide left and red arrives from the right. Closest to the roll's feel without being it.</span></div>
+    <div class="links letters"><a>Speaking</a><a>Work With Me</a><a>Unmissables</a><a>About</a><a>Contact</a></div>
+  </div>
+
+  <div class="row cw">
+    <div class="rowlab"><span class="n">B · Ink pour</span><span class="d">The letters stay put and fill with red from the top down, one after another — like ink pouring in.</span></div>
+    <div class="links letters"><a>Speaking</a><a>Work With Me</a><a>Unmissables</a><a>About</a><a>Contact</a></div>
+  </div>
+
+  <div class="row jp">
+    <div class="rowlab"><span class="n">C · Hop</span><span class="d">Each letter lifts a few pixels and turns red, staggered — a small, playful wave.</span></div>
+    <div class="links letters"><a>Speaking</a><a>Work With Me</a><a>Unmissables</a><a>About</a><a>Contact</a></div>
+  </div>
+
+  <div class="row bl">
+    <div class="rowlab"><span class="n">D · Soft morph</span><span class="d">Letters blur through and resolve to red, staggered — dreamy and understated.</span></div>
+    <div class="links letters"><a>Speaking</a><a>Work With Me</a><a>Unmissables</a><a>About</a><a>Contact</a></div>
+  </div>
+</div>
+
+<p class="foot">All pure CSS. On a real cream section the resting letters become charcoal; the red still reads.</p>
+
+<script>
+  document.querySelectorAll(".letters a").forEach((a) => {
+    const text = a.textContent;
+    a.textContent = "";
+    let i = 0;
+    for (const chr of text) {
+      if (chr === " ") {
+        const s = document.createElement("span");
+        s.className = "sp";
+        a.appendChild(s);
+        continue;
+      }
+      const ch = document.createElement("span");
+      ch.className = "ch";
+      ch.style.setProperty("--i", i++);
+      const t = document.createElement("span");
+      t.className = "t";
+      t.textContent = chr;
+      const b = document.createElement("span");
+      b.className = "b";
+      b.textContent = chr;
+      ch.appendChild(t);
+      ch.appendChild(b);
+      a.appendChild(ch);
+    }
+  });
+</script>

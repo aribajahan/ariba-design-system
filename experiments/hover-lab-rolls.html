@@ -1,0 +1,132 @@
+<title>Nav Hover Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500&display=swap">
+<style>
+  :root{
+    --cream:#FFFBF3; --charcoal:#2D2D2D; --cherish:#E73131; --highlighter:#F3FF00;
+    --fd:'Big Shoulders Display','Arial Narrow',sans-serif; --fb:'Barlow',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--charcoal); color:var(--cream); font-family:var(--fb); -webkit-font-smoothing:antialiased; padding:56px clamp(24px,6vw,80px) 100px;}
+  .head{max-width:1100px; margin:0 auto;}
+  .eyebrow{font-family:var(--fd); font-weight:800; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--cherish);}
+  h1{font-family:var(--fd); font-weight:900; font-size:clamp(34px,6vw,56px); line-height:.92; letter-spacing:-.02em; text-transform:uppercase; margin:12px 0 0;}
+  .sub{font-size:17px; opacity:.72; max-width:60ch; margin:16px 0 0; line-height:1.5;}
+
+  .rows{max-width:1100px; margin:44px auto 0; display:flex; flex-direction:column; gap:2px;}
+  .row{padding:36px 4px; border-top:1px solid rgba(255,251,243,.12); display:flex; flex-direction:column; gap:20px;}
+  .row:last-child{border-bottom:1px solid rgba(255,251,243,.12);}
+  .row.star{background:rgba(231,49,49,.06); border-radius:4px; padding-left:20px; padding-right:20px;}
+  .rowlab{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;}
+  .rowlab .n{font-family:var(--fd); font-weight:900; font-size:22px; text-transform:uppercase; letter-spacing:-.01em;}
+  .rowlab .d{font-size:14px; opacity:.6; max-width:60ch;}
+  .links{display:flex; align-items:center; gap:34px; flex-wrap:wrap;}
+  .links a{font-family:var(--fd); font-weight:800; font-size:19px; letter-spacing:.11em; text-transform:uppercase; color:var(--cream); text-decoration:none; cursor:pointer;}
+
+  /* shared letter split */
+  .rl a, .rlf a, .rc a, .rlc a, .rld a{display:inline-flex; color:var(--cream);}
+  .letters .sp{display:inline-block; width:.32em;}
+
+  /* ★ ORIGINAL — up roll, left-to-right stagger */
+  .rl .ch{position:relative; display:inline-block; overflow:hidden; line-height:1;}
+  .rl .ch .t, .rl .ch .b{display:block; transition:transform .42s cubic-bezier(.62,0,.2,1); transition-delay:calc(var(--i) * 22ms);}
+  .rl .ch .b{position:absolute; left:0; top:100%; color:var(--cherish);}
+  .rl a:hover .ch .t, .rl a:hover .ch .b{transform:translateY(-100%);}
+
+  /* A — CROSSFADE: outgoing letter fades as the red rises in (no double image) */
+  .rlf .ch{position:relative; display:inline-block; line-height:1;}
+  .rlf .ch .t, .rlf .ch .b{display:block; transition:transform .4s cubic-bezier(.62,0,.2,1), opacity .34s ease; transition-delay:calc(var(--i) * 24ms);}
+  .rlf .ch .b{position:absolute; left:0; top:0; color:var(--cherish); transform:translateY(60%); opacity:0;}
+  .rlf a:hover .ch .t{transform:translateY(-60%); opacity:0;}
+  .rlf a:hover .ch .b{transform:translateY(0); opacity:1;}
+
+  /* B — RECOLOR WAVE: no second copy at all, letters just turn red in sequence */
+  .rc .ch{display:inline-block; line-height:1;}
+  .rc .ch .b{display:none;}
+  .rc .ch .t{display:block; transition:color .3s ease; transition-delay:calc(var(--i) * 28ms);}
+  .rc a:hover .ch .t{color:var(--cherish);}
+
+  /* C — CENTER-OUT: same roll, but the wave starts in the middle and spreads */
+  .rlc .ch{position:relative; display:inline-block; overflow:hidden; line-height:1;}
+  .rlc .ch .t, .rlc .ch .b{display:block; transition:transform .42s cubic-bezier(.62,0,.2,1); transition-delay:calc(var(--c) * 34ms);}
+  .rlc .ch .b{position:absolute; left:0; top:100%; color:var(--cherish);}
+  .rlc a:hover .ch .t, .rlc a:hover .ch .b{transform:translateY(-100%);}
+
+  /* D — DOWN ROLL: letters roll downward, red comes from above */
+  .rld .ch{position:relative; display:inline-block; overflow:hidden; line-height:1;}
+  .rld .ch .t, .rld .ch .b{display:block; transition:transform .42s cubic-bezier(.62,0,.2,1); transition-delay:calc(var(--i) * 22ms);}
+  .rld .ch .b{position:absolute; left:0; bottom:100%; color:var(--cherish);}
+  .rld a:hover .ch .t, .rld a:hover .ch .b{transform:translateY(100%);}
+
+  .foot{max-width:1100px; margin:40px auto 0; font-size:13px; opacity:.5; line-height:1.5;}
+</style>
+
+<div class="head">
+  <span class="eyebrow">Nav Hover Lab · Per-letter roll</span>
+  <h1>Your winner, plus ways to fix the double-image.</h1>
+  <p class="sub">The top row (in the red panel) is the version you loved, untouched. Under it are variations that each handle the "duplicate" a different way. Hover them all.</p>
+</div>
+
+<div class="rows">
+  <div class="row star rl">
+    <div class="rowlab"><span class="n">★ Original</span><span class="d">What you loved: each letter rolls up to a cherish copy, staggered left-to-right.</span></div>
+    <div class="links letters"><a>Speaking</a><a>Work With Me</a><a>Unmissables</a><a>About</a><a>Contact</a></div>
+  </div>
+
+  <div class="row rlf">
+    <div class="rowlab"><span class="n">A · Crossfade</span><span class="d">The outgoing letter fades out as the red rises in — you never see two solid copies.</span></div>
+    <div class="links letters"><a>Speaking</a><a>Work With Me</a><a>Unmissables</a><a>About</a><a>Contact</a></div>
+  </div>
+
+  <div class="row rc">
+    <div class="rowlab"><span class="n">B · Recolor wave</span><span class="d">No second copy at all — the letters just turn cherish in sequence. Zero duplication, most understated.</span></div>
+    <div class="links letters"><a>Speaking</a><a>Work With Me</a><a>Unmissables</a><a>About</a><a>Contact</a></div>
+  </div>
+
+  <div class="row rlc">
+    <div class="rowlab"><span class="n">C · Center-out</span><span class="d">The same roll, but the wave starts in the middle of the word and spreads outward.</span></div>
+    <div class="links letters"><a>Speaking</a><a>Work With Me</a><a>Unmissables</a><a>About</a><a>Contact</a></div>
+  </div>
+
+  <div class="row rld">
+    <div class="rowlab"><span class="n">D · Down roll</span><span class="d">Letters roll downward and the red arrives from above — same idea, opposite direction.</span></div>
+    <div class="links letters"><a>Speaking</a><a>Work With Me</a><a>Unmissables</a><a>About</a><a>Contact</a></div>
+  </div>
+</div>
+
+<p class="foot">All pure CSS — each letter gets a second copy and a transition-delay from its position. On a real cream section the red stays red and the cream letters become charcoal; we'd set that when we build the winner.</p>
+
+<script>
+  // split each .letters link into character cells, with an index (--i) and a
+  // distance-from-center (--c) so different rows can stagger different ways.
+  document.querySelectorAll(".letters a").forEach((a) => {
+    const text = a.textContent;
+    const chars = [...text].filter((c) => c !== " ");
+    const center = (chars.length - 1) / 2;
+    a.textContent = "";
+    let i = 0;
+    for (const chr of text) {
+      if (chr === " ") {
+        const s = document.createElement("span");
+        s.className = "sp";
+        a.appendChild(s);
+        continue;
+      }
+      const ch = document.createElement("span");
+      ch.className = "ch";
+      ch.style.setProperty("--i", i);
+      ch.style.setProperty("--c", Math.round(Math.abs(i - center)));
+      const t = document.createElement("span");
+      t.className = "t";
+      t.textContent = chr;
+      const b = document.createElement("span");
+      b.className = "b";
+      b.textContent = chr;
+      ch.appendChild(t);
+      ch.appendChild(b);
+      a.appendChild(ch);
+      i++;
+    }
+  });
+</script>
