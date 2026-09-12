@@ -286,7 +286,7 @@
     <div class="stage-head">
       <div>
         <span class="eyebrow">Live canvas</span>
-        <h1 class="vh">Every rule is a control.</h1>
+        <h1 class="vh">Drive the canvas.</h1>
         <p class="vlede">Each control changes one rule of the system. Switch the ground, the density, or the viewport, and the preview re-renders the way a real page would. The controls read the same values the site is built from.</p>
       </div>
     </div>
@@ -348,7 +348,7 @@
   <div class="pad">
     <span class="eyebrow">Foundations · Color</span>
     <h1 class="vh">The palette.</h1>
-    <p class="vlede">Three structural colors carry the whole site. Four accents appear only where each one is reserved. Click any swatch to copy its hex.</p>
+    <p class="vlede">Three of the colors are structural; the other four are accents, used only where each one is reserved. Click any swatch to copy its hex.</p>
 
     <p class="glabel" style="margin-top:34px">Primary — the majority of the design</p>
     <div class="swatches" id="swPrimary">
@@ -375,8 +375,8 @@
 <section class="view" data-view="type">
   <div class="pad">
     <span class="eyebrow">Foundations · Type</span>
-    <h1 class="vh">Two faces, one scale.</h1>
-    <p class="vlede">Big Shoulders Display carries every headline, numeral, and label at heavy weights. Barlow does all the reading, with a 16px floor. Every size in the scale is a fixed value: there's no fluid clamp, so 48px stays 48px until the mobile breakpoint takes over.</p>
+    <h1 class="vh">The type scale.</h1>
+    <p class="vlede">Big Shoulders Display sets headlines, numerals, and labels at heavy weights. Barlow sets body text, 16px minimum. Every size in the scale is fixed. There's no fluid clamp, so 48px stays 48px until the mobile breakpoint takes over.</p>
 
     <div class="typlab">
       <span>Drag to preview the display face at any size:</span>
@@ -452,7 +452,7 @@
   <div class="pad">
     <span class="eyebrow">Motion & interaction</span>
     <h1 class="vh">How the system moves.</h1>
-    <p class="vlede">Nothing is parked offscreen waiting to reveal itself. Motion lives in two places: continuous ambient loops like the logo marquee, and the feedback of touch. Hit replay on any one to run it again.</p>
+    <p class="vlede">Nothing starts hidden and animates in on scroll. Motion happens in two places: ambient loops like the logo marquee, and touch feedback. Hit replay on any one to run it again.</p>
 
     <div class="motion-grid">
       <div class="mo">
@@ -493,7 +493,7 @@
   <div class="pad">
     <span class="eyebrow">Navigation</span>
     <h1 class="vh">The floating nav.</h1>
-    <p class="vlede">Not a bar. Two objects float over the hero and recolor to whatever's behind them. The signature is the hover — ink pouring into each letter.</p>
+    <p class="vlede">Two objects float over the hero and recolor to whatever's behind them, instead of sitting in a full-width bar. The hover is the distinctive part: each letter fills with red from the top down.</p>
 
     <p class="glabel">Hover the links — the ink pour</p>
     <div class="navdemo">
@@ -509,11 +509,11 @@
 
     <p class="glabel">How it behaves</p>
     <div class="rules">
-      <div class="rule"><span class="n">1</span><p><strong>Floating, not a bar.</strong> Wordmark left, links right, nothing spanning the width — the hero owns the full top edge.</p></div>
+      <div class="rule"><span class="n">1</span><p><strong>Floating, not a bar.</strong> Wordmark on the left, links on the right, nothing spanning the width, so the hero fills the whole top of the screen.</p></div>
       <div class="rule"><span class="n">2</span><p><strong>Recolors to the ground.</strong> White over dark heroes and sections, charcoal over cream. It reads the background behind it as you scroll.</p></div>
-      <div class="rule"><span class="n">3</span><p><strong>Hides on scroll down, returns on scroll up or pause.</strong> It clears out of the way while reading, then comes back the moment you reach for it.</p></div>
+      <div class="rule"><span class="n">3</span><p><strong>Hides on scroll down, returns on scroll up or pause.</strong> It stays out of the way while you read and comes back when you scroll up.</p></div>
       <div class="rule"><span class="n">4</span><p><strong>A whisper of background, only past the hero.</strong> Bare over the hero; a faint panel appears behind the links once it floats over content.</p></div>
-      <div class="rule" style="background:var(--cherish)"><span class="n">5</span><p><strong>Ink-pour hover.</strong> Each link fills with cherish from the top down, staggered letter by letter, with a rippled liquid edge. One organic moment in a sharp system.</p></div>
+      <div class="rule" style="background:var(--cherish)"><span class="n">5</span><p><strong>Ink-pour hover.</strong> Each link fills with cherish from the top down, staggered letter by letter, with a rippled edge.</p></div>
       <div class="rule"><span class="n">6</span><p><strong>Mobile is a full-screen menu.</strong> Wordmark and a burger; tapping opens a charcoal panel with the links stacked large.</p></div>
     </div>
     <p class="vlede" style="font-size:14px;margin-top:26px;opacity:0.6">Live on <a href="https://aribajahan.com" style="color:var(--cherish)">aribajahan.com</a>. The ink pour is an animated <code style="font-family:var(--font-body)">clip-path</code> — no library.</p>
@@ -524,7 +524,7 @@
   <div class="pad">
     <span class="eyebrow">The working rules</span>
     <h1 class="vh">Building a new page.</h1>
-    <p class="vlede">The whole system in seven moves. Follow these and a new page matches the site without re-deriving a single decision.</p>
+    <p class="vlede">The system in seven moves. Follow them and a new page matches the site without re-deriving a single decision.</p>
 
     <p class="glabel">Spacing spec</p>
     <div style="overflow-x:auto;margin-bottom:44px">
