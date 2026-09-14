@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Tape & Highlighter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +41,16 @@
   }
   .term:hover::before, .term.on::before{ transform:rotate(-.7deg) scaleX(1); }
 
+  /* marker used as an underline */
+  .under{ position:relative; display:inline-block; z-index:0; font-weight:600; }
+  .under::after{ content:''; position:absolute; left:-2px; right:-3px; bottom:-5px; height:8px; z-index:-1; background:var(--highlighter); transform:rotate(-1deg) scaleX(.12); transform-origin:left; transition:transform .4s cubic-bezier(.62,0,.2,1); clip-path:polygon(0 28%,100% 0,98% 74%,4% 100%); }
+  .under:hover::after, .under.on::after{ transform:rotate(-1deg) scaleX(1); }
+
+  /* marker used to fill a button */
+  .mark-btn{ position:relative; isolation:isolate; overflow:hidden; margin-top:20px; padding:12px 18px; border:1.5px solid var(--charcoal); background:transparent; color:var(--charcoal); font-family:var(--fd); font-weight:800; font-size:13px; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; }
+  .mark-btn::before{ content:''; position:absolute; z-index:-1; inset:5px 6px; background:var(--highlighter); transform:rotate(-1deg) scaleX(0); transform-origin:left; transition:transform .38s cubic-bezier(.62,0,.2,1); clip-path:polygon(0 12%,100% 0,98% 89%,2% 100%); }
+  .mark-btn:hover::before, .mark-btn.on::before{ transform:rotate(-1deg) scaleX(1); }
+
   /* tape — labels a THING. same rough edge, but the text stays crisp (edge is a filtered layer behind). */
   .tapes{ display:flex; gap:26px; flex-wrap:wrap; align-items:center; }
   .tape{ position:relative; display:inline-block; transform:rotate(-1.4deg); color:var(--charcoal);
@@ -75,13 +86,16 @@
 </svg>
 
 <div class="wrap">
-  <span class="eyebrow">Two uses of one mark</span>
-  <h1>Tape for tags,<br>highlighter for words.</h1>
-  <p class="intro">Hover the marked words below to draw the highlighter. The tape tags stay as they are. Both have a rough, hand-cut edge — that's the analog cue, kept quiet.</p>
+  <span class="eyebrow">Marks</span>
+  <h1>Tape, marker,<br>and the edges between them.</h1>
+  <p class="intro">I was trying to bring in a little physical texture without making the whole page feel handmade. These are the versions I spent time with.</p>
 
-  <p class="glabel">Highlighter — marks a word inside a sentence (only your owned terms)</p>
+  <p class="glabel">Marker — three ways it could show up</p>
   <p class="prose">Ariba works where a shift in technology or behavior creates a question an organization has to answer. That question is rarely just about the product. The lens for organizations is <span class="term">Experience-Led Growth</span>. For people, it's <span class="term">Cognitive Endurance</span>: keeping your judgment your own as AI offers to do more of the thinking. The through-line is helping organizations become <span class="term">unmissable</span>.</p>
   <button class="btn" id="draw">Draw the marks</button>
+
+  <p class="note" style="margin-top:30px">The same marker also worked as a lighter <span class="under">underline</span>, or as the fill inside a call to action.</p>
+  <button class="mark-btn" id="markBtn">Work with me →</button>
 
   <p class="glabel">Tape — labels a thing (a tag on a card, a year on the timeline)</p>
   <div class="tapes">
@@ -90,8 +104,8 @@
     <span class="tape hl">2014 — Ad Council</span>
   </div>
 
-  <p class="glabel">The question</p>
-  <p class="note">Tape labels a <em>thing</em>. The highlighter marks a <em>word</em>. They never overlap. Do they read as one motif used two ways — or one mark too many? That's the call.</p>
+  <p class="glabel">How I separated them</p>
+  <p class="note">Tape names a thing: a category, a year, an offer. Marker stays closer to the writing: a phrase, an underline, or an action. They can sit in the same system because they do different jobs.</p>
 </div>
 
 <div class="dark">
@@ -105,5 +119,7 @@
     document.querySelectorAll('.term').forEach((t, i) => {
       setTimeout(() => t.classList.toggle('on'), i * 180);
     });
+    document.querySelector('.under').classList.toggle('on');
   });
+  document.getElementById('markBtn').addEventListener('click', (event) => event.currentTarget.classList.toggle('on'));
 </script>
