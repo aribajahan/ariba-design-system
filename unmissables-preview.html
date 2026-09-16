@@ -12,6 +12,7 @@
     :root { --cream:#FFFBF3; --charcoal:#2D2D2D; --tennis:#8EF942; --cherish:#E73131; --hairline:rgba(45,45,45,.14); --panel:#FDF7EC; --display:'Big Shoulders Display','Arial Narrow',sans-serif; --body:'Barlow',system-ui,sans-serif; }
     * { box-sizing:border-box; } body { margin:0; color:var(--charcoal); background:var(--cream); font-family:var(--body); line-height:1.6; }
     .chrome { position:sticky; top:0; z-index:5; background:rgba(255,251,243,.92); backdrop-filter:blur(12px); border-bottom:1px solid var(--hairline); }
+    body.embed .chrome { display:none; } body.embed .pad { padding-top:40px; }
     .chrome-top { display:flex; align-items:center; justify-content:space-between; padding:16px clamp(18px,4vw,40px) 0; }
     .brand { display:flex; align-items:center; gap:12px; } .ajmark { width:40px; height:40px; border-radius:50%; display:grid; place-items:center; background:var(--cherish); color:var(--cream); font:900 31px/1 var(--display); }
     .n { font:900 20px/.9 var(--display); letter-spacing:-.01em; text-transform:uppercase; } .m { font:700 10px/1.2 var(--display); letter-spacing:.16em; opacity:.55; text-transform:uppercase; }
@@ -39,6 +40,7 @@
   </style>
 </head>
 <body>
+  <script>if(new URLSearchParams(window.location.search).has('embed'))document.body.classList.add('embed');</script>
   <header class="chrome">
     <div class="chrome-top"><div class="brand"><span class="ajmark">A</span><div><div class="n">Ariba Jahan</div><div class="m">Design System</div></div></div><button class="help">?</button></div>
     <nav class="tiernav" aria-label="Design system sections"><button class="tier">Canvas</button><button class="tier">Color</button><button class="tier">Type</button><button class="tier">Components</button><button class="tier">Motion</button><button class="tier">Marks</button><button class="tier">Nav</button><button class="tier">Experiments</button><button class="tier active">Unmissables</button><button class="tier">Rules</button></nav>
