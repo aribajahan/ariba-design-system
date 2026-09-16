@@ -1,4 +1,4 @@
-# Ariba Jahan — Design System
+# Ariba Jahan — Brand Book
 
 The living brand book behind [aribajahan.com](https://aribajahan.com) — the palette,
 type scale, signature motifs, components, and motion rules that make the site read as one
